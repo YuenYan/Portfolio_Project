@@ -49,11 +49,12 @@ SELECT
    SUM(new_cases) AS new_cases,
    SUM(new_deaths) AS new_deaths,
    SUM(total_cases) AS total_cases,
-   SUM(total_deaths) AS total_deaths
+   SUM(total_deaths) AS total_deaths,
+   (SUM(total_deaths)/SUM(total_cases))*100 AS PercentageDeath
 FROM `covid-326506.Covid19.CovidDeath`
-WHERE continent IS NOT NULL  
+WHERE continent IS NOT NULL
 GROUP BY date
-Order BY date; 
+Order BY date;  
 
 --Vaccinations
 --Use CTE
