@@ -1,4 +1,4 @@
---Percentage Death per Cases
+--1 Percentage Death per Cases
 SELECT 
    location,
    date, 
@@ -9,13 +9,13 @@ FROM `covid-326506.Covid19.CovidDeath`
 WHERE continent IS NOT NULL  
 ORDER BY location, date;
  
---Percentage Infections per Population
+--2 Percentage Infections per Population
 SELECT location,date,population,total_cases, (total_cases/population)*100 AS percentage_infection
 FROM `covid-326506.Covid19.CovidDeath` 
 WHERE continent IS NOT NULL 
 ORDER BY location, date;
  
--- Locations of Top 10 highest infections per population
+--3 Locations of Top 10 highest infections per population
 SELECT location, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS percentage_infection
 FROM `covid-326506.Covid19.CovidDeath`
 WHERE continent IS NOT NULL  
@@ -23,31 +23,27 @@ GROUP BY location, population
 ORDER BY percentage_infection DESC
 LIMIT 10;
  
--- Locations of Top 10 highest death count
+--4 Locations of Top 10 highest death count
 SELECT location, MAX(total_deaths) AS HighestDeathCount
 FROM `covid-326506.Covid19.CovidDeath` 
 WHERE continent IS NOT NULL 
 GROUP BY location
 ORDER BY HighestDeathCount DESC
 LIMIT 10;
- 
--- Continent, infections per population
-SELECT continent, population, MAX(total_cases) AS HighestInfectionCount, MAX((total_cases/population))*100 AS percentage_infection
-FROM `covid-326506.Covid19.CovidDeath`
-WHERE continent IS NOT NULL  
-GROUP BY continent, population
-ORDER BY percentage_infection DESC
-LIMIT 10;
- 
--- Continent, of Top 10 highest death count
-SELECT continent, MAX(total_deaths) AS HighestDeathCount
-FROM `covid-326506.Covid19.CovidDeath` 
-WHERE continent IS NOT NULL 
+
+--5 Break down by continent, death count
+WITH location_Death AS (
+    SELECT continent, location, MAX(total_deaths) AS death
+    FROM `covid-326506.Covid19.CovidDeath`
+    WHERE continent IS NOT NULL
+    GROUP BY continent, location
+)
+SELECT continent, SUM(death) AS total_deaths 
+FROM location_Death
 GROUP BY continent
-ORDER BY HighestDeathCount DESC
-LIMIT 10;
+ORDER BY continent
  
--- Global NUmber
+--6 Global NUmber
 SELECT
    date,
    SUM(new_cases) AS new_cases,
@@ -59,7 +55,8 @@ WHERE continent IS NOT NULL
 GROUP BY date
 Order BY date; 
 
---CTE
+--Vaccinations
+--Use CTE
 WITH Vac_Pop AS (
     SELECT  Dea.continent, Dea.location, Dea.date, Dea.population, Vac.new_vaccinations, 
        SUM(Vac.new_vaccinations) OVER (Partition By Dea.location ORDER BY Dea.location, Dea.date) AS accumulated_vaccinations
@@ -75,7 +72,7 @@ FROM Vac_Pop
 ORDER BY continent, location, date;
  
  
---Temp Table
+--Use Temp Table
 CREATE TEMP TABLE Vac_Population AS 
     SELECT  Dea.continent, Dea.location, Dea.date, Dea.population, Vac.new_vaccinations, 
        SUM(Vac.new_vaccinations) OVER (Partition By Dea.location ORDER BY Dea.location, Dea.date) AS accumulated_vaccinations
