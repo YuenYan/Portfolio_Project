@@ -56,6 +56,11 @@ WHERE continent IS NOT NULL
 GROUP BY date
 Order BY date;  
 
+--6.2 Global total number
+SELECT SUM(new_cases) AS total_cases, SUM(new_deaths) AS total_deaths, IFNULL((SUM(new_deaths)/SUM(new_cases))*100,0) AS DeathPercentage
+FROM `covid-326506.Covid19.CovidDeath`
+WHERE continent IS NOT NULL;
+
 --Vaccinations
 --Use CTE
 WITH Vac_Pop AS (
