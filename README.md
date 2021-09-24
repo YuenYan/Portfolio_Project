@@ -21,5 +21,5 @@ My parts include:
 
 ## Some assignments done in my BSc curriculum - R Studio
 Please go to https://drive.google.com/drive/folders/1ut7rXs7qfvqLcow6MA_DXRTK0s0nb1n2?usp=sharing \
-_p.s. Absent of codes since they weren't saved, my apology_
+_p.s. Absent of codes since they weren't saved, my apologies_
 
