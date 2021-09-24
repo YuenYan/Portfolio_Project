@@ -8,7 +8,7 @@ _p.s. the downloaded data was seperated into 2 csv files, recording information 
 ## COVID-19 Visualization - Tableau
 Please go to https://public.tableau.com/app/profile/choi.yuen.yan/viz/ProjectPortfolio-Covid19/Dashboard1 \
 Visualizations of COVID-19 numbers \
-Data got from Part1 Data Exploration.
+Data got from previous project _COVID-19 Data Exploration - BigQUery_.
 
 ## Car Park Availability Prediction - Python
 Predict Vaccancy of the Lee Garden One Car Park \
