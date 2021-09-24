@@ -11,7 +11,7 @@ Visualizations of COVID-19 numbers \
 Data got from previous project _COVID-19 Data Exploration - BigQUery_.
 
 ## Car Park Availability Prediction - Python
-Predict Vaccancy of the Lee Garden One Car Park \
+Predict Vacancy of the Lee Garden One Car Park \
 This mini project was completed by me and my teammate Vickie from the DeepTech Talents Training Programme held by HKSTP & HKSTP InnoAcademy \
 My parts include: 
 * PartI (partial) Data Engineering 
