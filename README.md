@@ -8,5 +8,5 @@ _p.s. the downloaded data was seperated into 2 csv files, recording information 
 
 ## 2. Visualization - Tableau
 Please go to https://public.tableau.com/app/profile/choi.yuen.yan/viz/ProjectPortfolio-Covid19/Dashboard1 \
-Visualizations of COVID-19 numbers
-Data got from Part1 Data Exploration
+Visualizations of COVID-19 numbers \
+Data got from Part1 Data Exploration.
