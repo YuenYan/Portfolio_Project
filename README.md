@@ -1,5 +1,9 @@
 # Portfolio_Project
 
+## Web Scrapping (Nike) - Python
+Scrapping name and price of Nike product \ 
+Hand to Hand practice
+
 ## COVID-19 Data Exploration - BigQUery
 Use BigQuery to explore COVID-19 data and extract useful tables for further analysis. \
 Data downloaded from https://ourworldindata.org/covid-deaths \
@@ -18,6 +22,7 @@ My parts include:
 * PartII Feature Engineering
 * PartIV & V Model training & Evaluation
 * Part VI Application
+
 
 ## Some assignments done in my BSc curriculum - R Studio
 Please go to https://drive.google.com/drive/folders/1ut7rXs7qfvqLcow6MA_DXRTK0s0nb1n2?usp=sharing \
