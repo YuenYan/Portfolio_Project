@@ -2,7 +2,8 @@
 
 ## Web Scrapping (Nike) - Python
 Scrapping name and price of Nike product \ 
-Hand to Hand practice
+Hand to Hand practice \
+_Please go to https://colab.research.google.com/drive/1MqE_GvthQFL5oUs7f1A93OkXtPxTLRhE _
 
 ## COVID-19 Data Exploration - BigQUery
 Use BigQuery to explore COVID-19 data and extract useful tables for further analysis. \
